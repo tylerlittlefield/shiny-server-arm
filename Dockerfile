@@ -66,8 +66,8 @@ RUN apt-get update \
 RUN git clone https://github.com/rstudio/shiny-server.git \
     && mkdir shiny-server/tmp \
     && cd / \
-    && git clone https://github.com/hvalev/shiny-server-arm-docker.git \
-    && cp /shiny-server-arm-docker/binding.gyp /shiny-server/tmp/binding.gyp \
+    && git clone https://github.com/tylurp/rstudio-shiny-server.git \
+    && cp /rstudio-shiny-server/binding.gyp /shiny-server/tmp/binding.gyp \
     && sed -i '8s/.*/NODE_SHA256=976285886f734ac4e13be8b34586136499b088aa32c6430ca8eee166d167dca5/' shiny-server/external/node/install-node.sh \
     && sed -i 's/linux-x64.tar.xz/linux-arm64.tar.xz/' /shiny-server/external/node/install-node.sh \
     && sed -i 's/https:\/\/github.com\/jcheng5\/node-centos6\/releases\/download\//https:\/\/nodejs.org\/dist\//' /shiny-server/external/node/install-node.sh
@@ -91,7 +91,7 @@ COPY --from=builder /usr/local/bin/R /usr/local/bin/R
 COPY --from=builder /usr/local/lib/R /usr/local/lib/R
 COPY --from=builder /usr/local/bin/Rscript /usr/local/bin/Rscript
 COPY --from=builder /usr/local/shiny-server /usr/local/shiny-server
-COPY --from=builder /shiny-server-arm-docker /shiny-server-arm-docker
+COPY --from=builder /rstudio-shiny-server /rstudio-shiny-server
 WORKDIR /
 RUN useradd -r -m shiny \
     && ln -s /usr/local/shiny-server/bin/shiny-server /usr/bin/shiny-server \
@@ -100,8 +100,8 @@ RUN useradd -r -m shiny \
     && chown shiny /var/log/shiny-server \
     && mkdir -p /var/lib/shiny-server \
     && mkdir -p /etc/shiny-server
-RUN cp /shiny-server-arm-docker/shiny-server.conf /etc/shiny-server/shiny-server.conf \
-    && cp /shiny-server-arm-docker/init.sh /etc/shiny-server/init.sh
+RUN cp /rstudio-shiny-server/shiny-server.conf /etc/shiny-server/shiny-server.conf \
+    && cp /rstudio-shiny-server/init.sh /etc/shiny-server/init.sh
 RUN chmod 777 /etc/shiny-server/init.sh
 RUN chmod -R 777 /var/log/shiny-server \
     && chmod -R 777 /srv/shiny-server \
