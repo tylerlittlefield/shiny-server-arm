@@ -31,7 +31,7 @@ jobs:
         run: |
           docker buildx build --push \
           --tag tylerlittlefield/rstudio-shiny-server:latest \
-          --platform linux/arm/v7 .
+          --platform linux/arm/v8 .
       - 
         name: Docker Hub Description
         uses: peter-evans/dockerhub-description@v2
