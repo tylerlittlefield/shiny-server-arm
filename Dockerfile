@@ -99,11 +99,11 @@ RUN useradd -r -m shiny \
     && mkdir -p /srv/shiny-server \
     && chown shiny /var/log/shiny-server \
     && mkdir -p /var/lib/shiny-server \
-    && mkdir -p /etc/shiny-server
-RUN cp /rstudio-shiny-server/shiny-server.conf /etc/shiny-server/shiny-server.conf \
-    && cp /rstudio-shiny-server/init.sh /etc/shiny-server/init.sh
-RUN chmod 777 /etc/shiny-server/init.sh
-RUN chmod -R 777 /var/log/shiny-server \
+    && mkdir -p /etc/shiny-server \
+    && cp /rstudio-shiny-server/shiny-server.conf /etc/shiny-server/shiny-server.conf \
+    && cp /rstudio-shiny-server/init.sh /etc/shiny-server/init.sh \
+    && chmod 777 /etc/shiny-server/init.sh \
+    && chmod -R 777 /var/log/shiny-server \
     && chmod -R 777 /srv/shiny-server \
     && chmod -R 777 /var/lib/shiny-server \
     && chmod -R 777 /srv/shiny-server \
