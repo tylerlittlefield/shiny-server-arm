@@ -23,6 +23,7 @@ mkdir shiny-server/apps
 docker volume create --name shiny-apps --opt type=none --opt device=/home/<user>/shiny-server/apps/ --opt o=bind
 docker volume create --name shiny-logs --opt type=none --opt device=/home/<user>/shiny-server/logs/ --opt o=bind
 docker volume create --name shiny-conf --opt type=none --opt device=/home/<user>/shiny-server/conf/ --opt o=bind
+```
 
 # build image
 docker build --rm https://github.com/tylurp/shiny-server-arm.git --tag shiny-server-arm
