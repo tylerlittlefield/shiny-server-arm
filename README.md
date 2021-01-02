@@ -1,5 +1,7 @@
 # shiny-server-arm
 
+![build](https://github.com/tyluRp/shiny-server-arm/workflows/build/badge.svg)
+
 Run the following to get this working on a raspberry pi:
 
 ```bash
