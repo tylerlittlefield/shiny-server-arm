@@ -26,8 +26,8 @@ docker volume create --name shiny-apps --opt type=none --opt device=/home/<user>
 docker volume create --name shiny-logs --opt type=none --opt device=/home/<user>/shiny-server/logs/ --opt o=bind
 docker volume create --name shiny-conf --opt type=none --opt device=/home/<user>/shiny-server/conf/ --opt o=bind
 
-# build image
-docker build --rm https://github.com/tylurp/shiny-server-arm.git --tag shiny-server-arm
+# run container
+docker run -d -p 3838:3838 -v shiny-apps:/srv/shiny-server/ -v shiny-logs:/var/log/shiny-server/ -v shiny-conf:/etc/shiny-server/ --name shiny-server-arm tylurp/shiny-server-arm
 ```
 
 Once complete, run `docker image ls` and you should see something similar to:
