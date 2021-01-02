@@ -35,3 +35,10 @@ REPOSITORY             TAG       IMAGE ID       CREATED       SIZE
 shiny-server-arm       latest    fca4fc467885   3 hours ago   1.23GB
 ubuntu                 20.10     a5e86bd25736   5 weeks ago   71.9MB
 ```
+
+And also, `docker container ls`:
+
+```bash
+CONTAINER ID   IMAGE                  COMMAND                  CREATED       STATUS       PORTS                    NAMES
+a1d840b779ea   rstudio-shiny-server   "/etc/shiny-server/i…"   3 hours ago   Up 3 hours   0.0.0.0:3838->3838/tcp   affectionate_shannon
+```
