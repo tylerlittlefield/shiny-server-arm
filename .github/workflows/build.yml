@@ -2,8 +2,8 @@ name: build
 
 on:
   push:
-    paths-ignore:
-    - 'README.md'
+    paths:
+    - 'Dockerfile'
 
 jobs:
   buildx:
