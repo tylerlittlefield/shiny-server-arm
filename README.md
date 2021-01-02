@@ -51,3 +51,7 @@ git clone <your app here>
 ```
 
 Then navigate to `http://<your ip>:3838/`.
+
+## Acknowledgements
+
+A lot of the Dockerfile is based on existing work, please see [`hvalev/shiny-server-arm-docker`](https://github.com/hvalev/shiny-server-arm-docker).
