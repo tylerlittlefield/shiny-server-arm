@@ -42,3 +42,12 @@ And also, `docker container ls`:
 CONTAINER ID   IMAGE                  COMMAND                  CREATED       STATUS       PORTS                    NAMES
 a1d840b779ea   rstudio-shiny-server   "/etc/shiny-server/i…"   3 hours ago   Up 3 hours   0.0.0.0:3838->3838/tcp   affectionate_shannon
 ```
+
+Start adding shiny apps with:
+
+```bash
+cd ~/shiny-server/apps
+git clone <your app here>
+```
+
+Then navigate to `http://<your ip>:3838/`.
