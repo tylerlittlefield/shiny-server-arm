@@ -4,6 +4,7 @@ on:
   push:
     paths-ignore:
     - 'README'
+    - 'screenshots/*'
 
 jobs:
   buildx:
