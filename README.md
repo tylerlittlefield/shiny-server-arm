@@ -1,6 +1,9 @@
 # shiny-server-arm
 
-![build](https://github.com/tyluRp/shiny-server-arm/workflows/build/badge.svg)
+![docker-build](https://img.shields.io/docker/cloud/build/tylurp/shiny-server-arm)
+![gha-build](https://github.com/tyluRp/shiny-server-arm/workflows/build/badge.svg)
+![image-size](https://img.shields.io/docker/image-size/tylurp/shiny-server-arm)
+![pulls](https://img.shields.io/docker/pulls/tylurp/shiny-server-arm)
 
 ## docker-compose
 
