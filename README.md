@@ -1,8 +1,8 @@
 # shiny-server-arm
 
 ![build](https://github.com/tyluRp/shiny-server-arm/workflows/build/badge.svg)
-![image-size](https://img.shields.io/docker/image-size/tylurp/shiny-server-arm)
-![pulls](https://img.shields.io/docker/pulls/tylurp/shiny-server-arm)
+[![image-size](https://img.shields.io/docker/image-size/tylurp/shiny-server-arm)](https://hub.docker.com/repository/docker/tylurp/shiny-server-arm)
+[![pulls](https://img.shields.io/docker/pulls/tylurp/shiny-server-arm)](https://hub.docker.com/repository/docker/tylurp/shiny-server-arm)
 
 Run the lines below to get shiny-server running on a Raspberry Pi. Note that the lines assume you have a user `pirate`, so replace that with your preferred user.
 
