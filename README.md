@@ -21,16 +21,19 @@ mkdir shiny-server/conf
 mkdir shiny-server/apps
 
 # bind directories
-sudo docker volume create --name shiny-apps --opt type=none --opt device=/home/pirate/shiny-server/apps/ --opt o=bind
-sudo docker volume create --name shiny-logs --opt type=none --opt device=/home/pirate/shiny-server/logs/ --opt o=bind
-sudo docker volume create --name shiny-conf --opt type=none --opt device=/home/pirate/shiny-server/conf/ --opt o=bind
+docker volume create --name shiny-apps --opt type=none --opt device=/home/pirate/shiny-server/apps/ --opt o=bind
+docker volume create --name shiny-logs --opt type=none --opt device=/home/pirate/shiny-server/logs/ --opt o=bind
+docker volume create --name shiny-conf --opt type=none --opt device=/home/pirate/shiny-server/conf/ --opt o=bind
 
 # run the container
-docker run -d -p 3838:3838 \
-    -v shiny-apps:/srv/shiny-server/ \
-    -v shiny-logs:/var/log/shiny-server/ \
-    -v shiny-conf:/etc/shiny-server/ \
-    --name shiny-server-arm tylurp/shiny-server-arm
+docker run \
+    --detach \
+    --publish 3838:3838 \
+    --volume shiny-apps:/srv/shiny-server/ \
+    --volume shiny-logs:/var/log/shiny-server/ \
+    --volume shiny-conf:/etc/shiny-server/ \
+    --name shiny-server \
+    tylurp/shiny-server-arm
 ```
 
 ## Add apps
