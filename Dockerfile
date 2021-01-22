@@ -68,9 +68,9 @@ RUN git clone https://github.com/rstudio/shiny-server.git \
     && cd / \
     && git clone https://github.com/tylurp/shiny-server-arm.git \
     && cp /shiny-server-arm/binding.gyp /shiny-server/tmp/binding.gyp \
-    && sed -i '8s/.*/NODE_SHA256=976285886f734ac4e13be8b34586136499b088aa32c6430ca8eee166d167dca5/' shiny-server/external/node/install-node.sh \
-    && sed -i 's/linux-x64.tar.xz/linux-arm64.tar.xz/' /shiny-server/external/node/install-node.sh \
-    && sed -i 's/https:\/\/github.com\/jcheng5\/node-centos6\/releases\/download\//https:\/\/nodejs.org\/dist\//' /shiny-server/external/node/install-node.sh
+    && cp /shiny-server-arm/determine_arch.sh /shiny-server/determine_arch.sh \
+    && chmod +x /shiny-server/determine_arch.sh && \
+    && /shiny-server/determine_arch.sh
 WORKDIR /shiny-server/tmp/
 RUN PYTHON=`which python` \
     && mkdir ../build \
